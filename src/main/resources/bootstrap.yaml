@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    config:
+      #dev
+      #uri: http://20.26.25.152:${config.port:10011}
+      #local
+      #uri: http://localhost:${config.port:8888}
+      #name: dream-cmp-service
+      #profile: ${config.profile:dev}

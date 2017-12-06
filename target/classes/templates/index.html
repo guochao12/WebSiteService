@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org"  
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8"/>
+    <title>登录</title>
+    <!-- Vendor CSS -->
+    <link th:href="@{/css/app_1.min.css}" rel="stylesheet"/>
+    <!-- CSS -->
+</head>
+<body>
+   <div class="login-content">
+    <!-- Login -->
+    <div class="lc-block toggled" id="l-login">
+        <div class="lcb-form">
+            <form th:action="@{/login}" method="post" id="myform">
+                <div class="form-group">
+                    <div class="fg-line">
+                        <input type="text" name="username" class="form-control" placeholder="Username"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="fg-line">
+                        <input type="password" name="password" class="form-control" placeholder="Password"/>
+                    </div>
+                </div>
+
+                <div class="checkbox">
+                    <label>
+                        <input name="remember-me" type="checkbox" value=""/>
+                        <i class="input-helper"></i>
+                        Keep me signed in
+                    </label>
+                </div>
+
+                <a href="#" id="loginBtn" class="btn btn-login btn-success"><i class="zmdi zmdi-arrow-forward"></i></a>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+
+<!-- Javascript Libraries -->
+<script th:src="@{/vendors/jquery/dist/jquery.min.js}"></script>
+<script th:src="@{/vendors/bootstrap/dist/js/bootstrap.min.js}"></script>
+<script th:src="@{/vendors/Waves/dist/waves.min.js}"></script>
+<script th:src="@{/vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js}"></script>
+
+<script th:src="@{/js/app.min.js}"></script>
+
+<script>
+    $(document).ready(function () {
+
+        $(document).keypress(function(e) {
+            // 回车键事件
+            if(e.which == 13) {
+                subForm();
+            }
+        });
+
+        $("#loginBtn").click(function () {
+           subForm()
+        });
+
+        function subForm() {
+            $("#myform").submit();
+        }
+    })
+</script>
+</body>
+</html>

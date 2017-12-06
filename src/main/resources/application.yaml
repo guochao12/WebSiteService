@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: dream-businesscenter-service
+  http: 
+    multipart:
+        maxFileSize: 10Mb
+        maxRequestSize: 100Mb
+  database:
+    name: master
+    url: jdbc:oracle:thin:@localhost:1521:jinshui
+    username: system
+    password: Gc8254Gc
+    # 使用druid数据源
+    #type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: oracle.jdbc.driver.OracleDriver
+    #filters: stat
+    #maxActive: 20
+    #initialSize: 1
+    #maxWait: 60000
+    #minIdle: 1
+    #timeBetweenEvictionRunsMillis: 60000
+    #minEvictableIdleTimeMillis: 300000
+    validationQuery: select 1 from dual
+    testWhileIdle: true
+    #testOnBorrow: false
+    #testOnReturn: false
+    #poolPreparedStatements: true
+    #maxOpenPreparedStatements: 20
+  thymeleaf:
+    cache: false
+    check-template-location: true
+    content-type: text/html
+    enabled: true
+    encoding: UTF-8
+    #prefix: /templates/
+    #suffix: .html
+
+server:
+  port: 8082
+  #socketport: 8083
+  sockethost: localhost
+  tomcat:
+    access_log_enabled: true
+    basedir: target/tomcat
+
+  
